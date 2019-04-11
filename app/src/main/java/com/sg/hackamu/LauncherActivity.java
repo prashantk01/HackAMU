@@ -64,13 +64,14 @@ public class LauncherActivity extends AppCompatActivity {
     public class LauncherActivityClickHandlers{
         public void onFacultyButtonClicked(View view)
         {
-
+            startActivity(new Intent(LauncherActivity.this,FacultyLogIn.class));
+            LauncherActivity.this.finish();
         }
 
 
         public void onStudentButtonClicked(View view)
         {
-            startActivity(new Intent(LauncherActivity.this,LoginActivity.class));
+            startActivity(new Intent(LauncherActivity.this, LoginActivity.class));
             LauncherActivity.this.finish();
         }
     }
