@@ -43,8 +43,6 @@ public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "SignUpActivity";
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         };
 
-        getSupportActionBar().setTitle("Student Sign Up");
+        getSupportActionBar().setTitle("STUDENT SIGN UP");
         mFirebaseDatabase = FirebaseUtils.getDatabase();
         myRef = mFirebaseDatabase.getReference();
         signUpButton=signUpBinding.signupbuttons;

@@ -103,7 +103,7 @@ public class FacultyLogIn extends AppCompatActivity {
         }
 
         public void onSignUpButtonClicked (View view){
-            startActivity(new Intent(FacultyLogIn.this, SignUpActivity.class));
+            startActivity(new Intent(FacultyLogIn.this, FacultySignUp.class));
 
         }
 

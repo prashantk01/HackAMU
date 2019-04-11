@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         loginBinding= DataBindingUtil.setContentView(LoginActivity.this,R.layout.activity_login);
         loginBinding.setClickHandlers(new LoginActivityClickHandlers());
-        getSupportActionBar().setTitle("Student Login");
+        getSupportActionBar().setTitle("STUDENT LOG IN");
         firebaseAuth= FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         authStateListener=new FirebaseAuth.AuthStateListener() {
