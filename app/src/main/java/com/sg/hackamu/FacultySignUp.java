@@ -23,7 +23,8 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.sg.hackamu.databinding.ActivityFacultySignUpBinding;
-import com.sg.hackamu.model.faculty;
+//import com.sg.hackamu.model.Faculty;
+import com.sg.hackamu.model.Faculty;
 import com.sg.hackamu.utils.FirebaseUtils;
 
 public class FacultySignUp extends AppCompatActivity {
@@ -106,7 +107,7 @@ public class FacultySignUp extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             userProfileChangeRequest=new UserProfileChangeRequest.Builder().setDisplayName(name.getText().toString().trim()).build();
                             firebaseUser=firebaseAuth.getCurrentUser();
-                            faculty Faculty=new faculty();
+                            Faculty Faculty=new Faculty();
                             Faculty.setEmail(email.getText().toString().trim());
                             userID=firebaseUser.getUid();
                             Faculty.setUuid(userID);
@@ -121,7 +122,7 @@ public class FacultySignUp extends AppCompatActivity {
                                     }                                }
                             });
                             progressBar.setVisibility(View.GONE);
-                            Intent i = new Intent(FacultySignUp.this, MainActivity.class);
+                            Intent i = new Intent(FacultySignUp.this, MainActivityFaculty.class);
                             startActivity(i);
                             FacultySignUp.this.finish();
                         } else {

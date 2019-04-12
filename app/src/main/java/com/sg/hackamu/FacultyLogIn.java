@@ -88,7 +88,7 @@ public class FacultyLogIn extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             progressBar.setVisibility(View.GONE);
-                            Intent i = new Intent(FacultyLogIn.this, MainActivity.class);
+                            Intent i = new Intent(FacultyLogIn.this, MainActivityFaculty.class);
                             startActivity(i);
                             FacultyLogIn.this.finish();
                         } else {

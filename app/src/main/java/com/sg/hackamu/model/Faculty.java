@@ -8,7 +8,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 @Entity(tableName = "Faculty")
-public class faculty implements Parcelable {
+public class Faculty implements Parcelable {
     @ColumnInfo(name = "name")
     private String name;
 
@@ -32,7 +32,7 @@ public class faculty implements Parcelable {
     @ColumnInfo(name="uuid")
     private String uuid;
 
-    public faculty(String name,String department, String password, String email,long id,boolean login,String uuid) {
+    public Faculty(String name, String department, String password, String email, long id, boolean login, String uuid) {
         this.name = name;
         this.department=department;
         this.password = password;
@@ -43,7 +43,7 @@ public class faculty implements Parcelable {
     }
 
     @Ignore
-    public faculty() {
+    public Faculty() {
 
     }
 
@@ -104,7 +104,7 @@ public class faculty implements Parcelable {
     }
 
     @Ignore
-    protected faculty(Parcel in) {
+    protected Faculty(Parcel in) {
         name = in.readString();
         department=in.readString();
         password = in.readString();
@@ -131,15 +131,15 @@ public class faculty implements Parcelable {
     }
 
     @SuppressWarnings("unused")
-    public static final Parcelable.Creator<faculty> CREATOR = new Parcelable.Creator<faculty>() {
+    public static final Parcelable.Creator<Faculty> CREATOR = new Parcelable.Creator<Faculty>() {
         @Override
-        public faculty createFromParcel(Parcel in) {
-            return new faculty(in);
+        public Faculty createFromParcel(Parcel in) {
+            return new Faculty(in);
         }
 
         @Override
-        public faculty[] newArray(int size) {
-            return new faculty[size];
+        public Faculty[] newArray(int size) {
+            return new Faculty[size];
         }
     };
 }
