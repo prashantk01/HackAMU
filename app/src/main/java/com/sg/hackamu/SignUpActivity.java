@@ -31,6 +31,8 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText email;
     public static EditText name;
     private EditText password;
+    private EditText faculty_no;
+    private EditText enroll_no;
     private ActivitySignUpBinding signUpBinding;
     private ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
@@ -67,6 +69,8 @@ public class SignUpActivity extends AppCompatActivity {
         progressBar=signUpBinding.progressBar1;
         email=signUpBinding.emails;
         name=signUpBinding.name;
+        faculty_no=signUpBinding.facultyNo;
+        enroll_no=signUpBinding.enrollNo;
         password=signUpBinding.passwords;
     }
     @Override
@@ -88,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
     public class SignupactivityClickHandlers{
         public void onSignUpButtonClicked(View v)
         {
-            if(email.getText().toString().trim().length()!=0&&name.getText().toString().trim().length()!=0&&password.getText().toString().trim().length()!=0)
+            if(email.getText().toString().trim().length()!=0&&name.getText().toString().trim().length()!=0&&faculty_no.getText().toString().trim().length()!=0&&enroll_no.getText().toString().trim().length()!=0&&password.getText().toString().trim().length()!=0)
             {
                 progressBar.setVisibility(View.VISIBLE);
                 firebaseAuth.createUserWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim()).addOnFailureListener(new OnFailureListener() {
@@ -108,6 +112,8 @@ public class SignUpActivity extends AppCompatActivity {
                             userID=firebaseUser.getUid();
                             user.setUuid(userID);
                             user.setName(name.getText().toString().trim());
+                            user.setFaculty_no(faculty_no.getText().toString().trim());
+                            user.setEnroll_no(enroll_no.getText().toString().trim());
                             myRef.child("students").child(userID).setValue(user);
                             firebaseUser.updateProfile(userProfileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

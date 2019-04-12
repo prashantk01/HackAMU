@@ -22,6 +22,12 @@ public class User implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
+    @ColumnInfo(name="faculty_no")
+    private String faculty_no;
+
+    @ColumnInfo(name="enroll_no")
+    private String enroll_no;
+
     @ColumnInfo(name = "email")
     private String email;
 
@@ -32,8 +38,10 @@ public class User implements Parcelable {
     @ColumnInfo(name="uuid")
     private String uuid;
 
-    public User(String name, String password, String email,long id,boolean login,String uuid) {
+    public User(String name, String faculty_no,String enroll_no,String password, String email,long id,boolean login,String uuid) {
         this.name = name;
+        this.faculty_no=faculty_no;
+        this.enroll_no=enroll_no;
         this.password = password;
         this.id = id;
         this.email = email;
@@ -70,6 +78,22 @@ public class User implements Parcelable {
         this.name = name;
     }
 
+    public String getFaculty_no() {
+        return faculty_no;
+    }
+
+    public String getEnroll_no() {
+        return enroll_no;
+    }
+
+    public void setFaculty_no(String faculty_no) {
+        this.faculty_no = faculty_no;
+    }
+
+    public void setEnroll_no(String enroll_no) {
+        this.enroll_no = enroll_no;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -97,6 +121,8 @@ public class User implements Parcelable {
     @Ignore
     protected User(Parcel in) {
         name = in.readString();
+        faculty_no=in.readString();
+        enroll_no=in.readString();
         password = in.readString();
         id = in.readLong();
         email = in.readString();
@@ -112,6 +138,8 @@ public class User implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
+        dest.writeString(faculty_no);
+        dest.writeString(enroll_no);
         dest.writeString(password);
         dest.writeLong(id);
         dest.writeString(email);

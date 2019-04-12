@@ -106,6 +106,7 @@ public class faculty implements Parcelable {
     @Ignore
     protected faculty(Parcel in) {
         name = in.readString();
+        department=in.readString();
         password = in.readString();
         id = in.readLong();
         email = in.readString();

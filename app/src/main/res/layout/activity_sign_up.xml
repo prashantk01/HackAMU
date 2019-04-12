@@ -50,7 +50,38 @@
             android:hint="@string/name"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_faculty_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dimen_32x"
+        android:paddingTop="@dimen/dimen_16x"
+        android:paddingRight="@dimen/dimen_32x">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/faculty_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/faculty_no"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_enroll_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dimen_32x"
+        android:paddingTop="@dimen/dimen_16x"
+        android:paddingRight="@dimen/dimen_32x">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enroll_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enroll_no"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

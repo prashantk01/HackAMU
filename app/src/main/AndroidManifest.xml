@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/amulogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FacultySignUp"></activity>
+        <activity android:name=".FacultySignUp" />
         <activity android:name=".FacultyLogIn" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
